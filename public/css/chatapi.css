@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #f5f5f5;
+    min-width: 320px;
+}
+
+.header {
+    background-image: linear-gradient(135deg, #7cb12d 10%, #4c4d4b 100%) !important;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.header-logo {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: 0px;
+    margin-bottom: -4px;
+    transition: all 0.5s linear;
+}
+
+.header-title {
+    line-height: 1;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 0rem;
+    transition: all 0.5s linear;
+}
+
+.header-subtitle {
+    line-height: 1;
+    font-size: 1.75rem;
+    font-weight: 100;
+    margin-bottom: 0rem;
+    color: #fff;
+}
+
+.footer {
+    background-color: #4c4d4b;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.small-headline {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.smallest-headline {
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.timeline-image {
+    width: 80%;
+    border-radius: 0.5rem;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.max-button {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.space-top {
+    margin-top: 1rem;
+}
+
+@media(max-width: 550px){
+    .header-logo{
+    transition: all 0.5s linear;
+    height: 26px;
+    width: 26px;
+    margin-bottom: -3px;
+    }
+
+    .header-title {
+    transition: all 0.5s linear;
+    font-size: 25px;
+    font-weight: 200;
+    }
+}
+
+.message-icon {
+    transition: all 0.5s linear;
+    width: 128px;
+    height: 128px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.message-titel {
+    font-size: 25px;
+    font-weight: 400;
+    transition: all 0.5s linear;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.info, .success, .warning, .error, .validation {
+    transition: all 0.5s linear;
+    border: 1px solid;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+
+.error{
+    color: #D8000C;
+    background-color: #FFBABA;
+    
+}
+
+.validation{
+    color: #D63301;
+    background-color: #FFCCBA;
+}
+
