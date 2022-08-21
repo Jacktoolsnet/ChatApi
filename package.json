@@ -1,0 +1,31 @@
+{
+  "name": "chatapi",
+  "version": "1.0.0",
+  "description": "Chat backend.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jacktoolsnet/ChatApi.git"
+  },
+  "keywords": [
+    "Chat",
+    "Backend",
+    "NodeJs"
+  ],
+  "author": "JackTools.Net",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jacktoolsnet/ChatApi/issues"
+  },
+  "homepage": "https://github.com/Jacktoolsnet/ChatApi#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
