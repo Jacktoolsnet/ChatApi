@@ -1,5 +1,6 @@
 exports.getClientIp = (req, res, next) => {
-    const client_ip = req.headers['x-forwarded-for']?.split(',').shift() || req.socket?.remoteAddress;
+    //For this solution proxy_set_header X-Real-IP $remote_addr; have to be set in the server settings.
+    const client_ip = req.headers['x-real-ip']?.split(',').shift() || req.socket?.remoteAddress;
     res.status(200).send({
       status: {
         code: 200,
@@ -7,7 +8,7 @@ exports.getClientIp = (req, res, next) => {
       },
       data: {
         client_ip,
-        x_forwarded_for: req.headers['x-forwarded-for']
+        x_forwarded_for: req.headers['x-real-ip']
       }
     });
   }
