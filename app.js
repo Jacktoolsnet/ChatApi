@@ -10,6 +10,7 @@ const ejsController = require("./controllers/ejsController");
 const app = express();
 const port = 3000;
 
+app.set('trust proxy', true);
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 

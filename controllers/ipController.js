@@ -11,9 +11,11 @@ exports.getClientIp = (req, res, next) => {
         message: 'OK'
       },
       data: {
+        client_ip: req.ip,
         x_real_ip,
         x_forwarded_for,
-        x_forwarded_host
+        x_forwarded_host,
+        headers: req.headers
       }
     });
   }
