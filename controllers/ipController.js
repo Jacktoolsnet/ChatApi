@@ -1,5 +1,3 @@
-const requestIp = require('request-ip');
-
 exports.getClientIp = (req, res, next) => {
     res.status(200).send({
       status: {
@@ -7,7 +5,7 @@ exports.getClientIp = (req, res, next) => {
         message: 'OK'
       },
       data: {
-        client_ip: requestIp.getClientIp(req)
+        client_ip: req.ip
       }
     });
   }
