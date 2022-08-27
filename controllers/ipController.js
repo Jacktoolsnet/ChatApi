@@ -6,7 +6,8 @@ exports.getClientIp = (req, res, next) => {
         message: 'OK'
       },
       data: {
-        client_ip
+        client_ip,
+        x_forwarded_for: req.headers['x-forwarded-for']
       }
     });
   }
