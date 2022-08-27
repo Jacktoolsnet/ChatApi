@@ -8,6 +8,7 @@ exports.getClientIp = (req, res, next) => {
       },
       data: {
         client_ip,
+        local: req.socket.localAddress,
         x_forwarded_for: req.headers
       }
     });
