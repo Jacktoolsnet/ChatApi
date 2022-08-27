@@ -1,9 +1,8 @@
 const express = require('express');
 
 const router = express.Router();
+const ipController = require('../controllers/ipController')
 
-router.get('/getClientIp', (req, res, next) => {
-    res.status(200).send('GetClientIp works!');
-  });
+router.get('/getClientIp', ipController.getClientIp);
 
 module.exports = router;
