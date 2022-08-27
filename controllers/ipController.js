@@ -5,7 +5,7 @@ exports.getClientIp = (req, res, next) => {
         message: 'OK'
       },
       data: {
-        client_ip: req.ip
+        client_ip: req.socket.remoteAddress
       }
     });
   }
