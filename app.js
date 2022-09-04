@@ -2,20 +2,20 @@ const path = require('path');
 // load environment
 const dotenv = require('dotenv')
 dotenv.config({ path: path.resolve(__dirname, './develop.env') })
-console.log('process.env.PORT->' + process.env.PORT)
 
 const bodyParser = require('body-parser');
 const express = require('express');
 const { restart } = require('nodemon');
 
 const sequelize = require('./util/database');
+// models have to be imported for sync method.
 const clientModel = require('./models/clientModel');
 
+// routes
 const utilRoutes = require("./routes/utilRoutes");
 const clientRoutes = require("./routes/clientRoutes");
 const ejsController = require("./controllers/ejsController");
 
-// load environment for development
 const app = express();
 const port = parseInt(process.env.PORT) || 3000;
 
