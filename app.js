@@ -1,4 +1,8 @@
 const path = require('path');
+// load environment
+const dotenv = require('dotenv')
+dotenv.config({ path: path.resolve(__dirname, './develop.env') })
+console.log('process.env.PORT->' + process.env.PORT)
 
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -11,8 +15,9 @@ const utilRoutes = require("./routes/utilRoutes");
 const clientRoutes = require("./routes/clientRoutes");
 const ejsController = require("./controllers/ejsController");
 
+// load environment for development
 const app = express();
-const port = 3000;
+const port = parseInt(process.env.PORT) || 3000;
 
 app.set('trust proxy', true);
 app.set('view engine', 'ejs');
