@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-const ipController = require('../controllers/ipController')
+const ipController = require('../controllers/utilController')
 
 router.get('/getClientIp', ipController.getClientIp);
 
