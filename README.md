@@ -1,2 +1,2 @@
-# ChatApi
-A nodejs backend for just another chat app.
+# MySocialApi
+A nodejs backend for just another social media app.
