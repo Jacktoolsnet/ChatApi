@@ -5,6 +5,6 @@ const serverController = require('../controllers/serverController')
 
 router.get('/getPublicKey', serverController.getPublicKey);
 router.get('/encryptTestMessage', serverController.getEncryptTestMessage);
-router.post('/decryptedTestMessage', serverController.decryptTestMessage);
+router.post('/decryptedTestMessage', serverController.getDecryptTestMessage);
 
 module.exports = router;

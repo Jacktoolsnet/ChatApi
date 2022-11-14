@@ -44,7 +44,7 @@ exports.getEncryptTestMessage = (req, res, next) => {
 })();
 };
 
-exports.decryptTestMessage = (req, res, next) => {
+exports.getDecryptTestMessage = (req, res, next) => {
 
   const encrypted = req.body.encryptedTestMessage;
   console.log(encrypted);
