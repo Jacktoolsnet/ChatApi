@@ -47,8 +47,10 @@ app.get('/', ejsController.renderIndex);
 // 404 page
 app.use(ejsController.render404);
 
-// create OpenPGP key pair on each start  
-app.set('secret', serverSecrets.generateSecret(process.env.SECRETLENGTH));  
+// create the server secret
+app.set('secret', serverSecrets.generateSecret(process.env.SECRETLENGTH));
+
+// create OpenPGP key pair on each start    
 openpgp.generateKey({
     type: 'ecc', // Type of the key, defaults to ECC
     curve: 'curve25519', // ECC curve name, defaults to curve25519
@@ -76,9 +78,6 @@ openpgp.generateKey({
         // start server
         app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
-        // console.log(privateKey);     // '-----BEGIN PGP PRIVATE KEY BLOCK ... '
-        // console.log(publicKey);      // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
-        // console.log(revocationCertificate); // '-----BEGIN PGP PUBLIC KEY BLOCK ... '
       });
       }).catch(err => {
         console.error('Unable to update server data:', err);

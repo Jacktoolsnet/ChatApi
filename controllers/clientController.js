@@ -1,18 +1,12 @@
-const crypto = require('crypto');
 const bcryptjs = require('bcryptjs');
 const jsonwebtoken = require('jsonwebtoken');
+const serverSecrets = require('../util/serverSecrets');
 
 const ClientModel = require('../models/clientModel');
 
-function generateSecret(length) {
-  let charPool = `!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_abcdefghijklmnopqrstuvwxyz{|}`
-  return Array.from(crypto.randomFillSync(new Uint32Array(length)))
-      .map((x) => charPool[x % charPool.length])
-      .join('')
-};
 
 exports.createClient = (req, res, next) => {  
-    const generatedSecret =  generateSecret(20);
+    const generatedSecret =  serverSecrets.generateSecret(20);
     bcryptjs.hash(generatedSecret, 12).then(hashedSecret => {
       ClientModel.create({
         client_secret: hashedSecret
