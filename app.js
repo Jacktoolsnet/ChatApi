@@ -30,7 +30,7 @@ app.set('views', 'views');
 app.set('domain', process.env.DOMAIN)
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 // parse application/json
 app.use(bodyParser.json())
 
@@ -55,6 +55,7 @@ app.use(ejsController.render404);
       format: 'armored' // output key format, defaults to 'armored' (other options: 'binary' or 'object')
   }).then(openPGP => {
     // save openPGP-Keys
+    app.set('secret', process.env.SECRET);
     app.set('privateKey', openPGP.privateKey);
     app.set('publicKey', openPGP.publicKey);
     app.set('revocationCertificate',  openPGP.revocationCertificate); 
