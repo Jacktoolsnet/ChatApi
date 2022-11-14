@@ -12,7 +12,7 @@ exports.getPublicKey = (req, res, next) => {
   });
 };
 
-exports.getStatus = (req, res, next) => { 
+exports.getEncryptTestMessage = (req, res, next) => { 
   (async () => {
     const publicKeyArmored = req.app.get('publicKey');
     const privateKeyArmored = req.app.get('privateKey'); // encrypted private key
@@ -30,7 +30,6 @@ exports.getStatus = (req, res, next) => {
         encryptionKeys: publicKey,
         signingKeys: privateKey // optional
     });
-    console.log(encrypted); // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'
 
     res.status(200).send({
       status: {
